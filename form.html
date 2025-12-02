@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.7.1.min.js"></script>
+    <script src="./validation/dist/jquery.validate.min.js"></script>
+    <style>
+        .error{
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <form id="frm">
+        <label>Name</label>
+        <input type="text" name="name"><br><br>
+
+        <label>Email</label>
+        <input type="email" name="email"><br><br>
+
+         <label>Website</label>
+        <input type="url" name="website"><br><br>
+
+         <label>Message</label>
+        <input type="text" name="Message"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+    </div>
+    <script>
+        $('#frm').validate({
+        rules:{
+            name:{required:true
+
+            },
+        
+         email:{
+            required:true,
+            email:true
+         },
+         website:{
+            required:true,
+            website:true
+         },
+         Message:{
+            required:true
+         },
+        },
+        
+            
+
+            messages:{
+                name:{
+                        required:"Name is required" },
+                        email:{
+                            required:"Email is required",
+                            email:"Enter a valid email!"
+                        },
+                        website:{
+                            required:"Website is required",
+                            website:"Enter valid URL!"
+                        },
+                        Message:{
+                            required:"Message is required",
+                            Message:"Message is required!"
+              }
+            },
+           
+    })
+    </script>
+</body>
+</html>
